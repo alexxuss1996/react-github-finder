@@ -1,0 +1,29 @@
+.users-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 10px 20px;
+  box-shadow: 1px 1px 1px rgba(#0054c7, 0.15);
+  background-color: #000;
+  &-name {
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: capitalize;
+    line-height: 16px;
+    transition: all 0.3s ease;
+    &:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+  }
+  .user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    order: -1;
+  }
+}

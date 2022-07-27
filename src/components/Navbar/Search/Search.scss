@@ -1,17 +1,23 @@
 .search-container {
+  display: flex;
+  justify-content: space-between;
   position: relative;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  background-color: transparent;
   overflow: hidden;
   margin: 0 0 0 1rem;
   width: 100%;
   #search-field {
     font-size: 1.125em;
-    border: 1px transparent;
-    padding: 10px 15px;
-    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 90%;
+    padding: 10px 12px;
+    margin-right: 6px;
     background-color: #fff;
     text-indent: 5px;
+
+    &:focus {
+      outline: 1px solid transparent;
+    }
   }
 }

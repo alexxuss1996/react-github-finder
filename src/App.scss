@@ -17,12 +17,13 @@ body {
 }
 
 a {
-  color: var(--primary-color);
+  color: #fefefe;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 a:hover {
-  color: #666;
+  color: #ddd;
 }
 
 ul {
@@ -45,4 +46,51 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+input[type="text"] {
+  &:focus {
+    outline: 1px solid #ccc;
+  }
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #0054c7;
+  color: #fff;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: darken(#fff, 0.8);
+    color: #0054c7;
+  }
+}
+
+.btn-secondary {
+  background-color: #39be1a;
+  color: #fff;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: darken(#fff, 0.8);
+    color: #39be1a;
+  }
+}
+
+.loading {
+  color: #feefee;
+  font-weight: bolder;
+  font-size: 16px;
+}
+.error {
+  color: #ff000f;
+  font-weight: bold;
+  font-size: 18px;
 }
