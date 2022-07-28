@@ -84,13 +84,27 @@ input[type="text"] {
   }
 }
 
+.btn-red {
+  margin-left: 6px;
+  color: #fff;
+  background-color: #cb2a2a;
+  &:hover {
+    background-color: darken(#fff, 0.8);
+    color: #cb2a2a;
+  }
+}
+
 .loading {
   color: #feefee;
+  margin-top: 15px;
   font-weight: bolder;
-  font-size: 16px;
+  font-size: 24px;
+  text-align: center;
 }
 .error {
   color: #ff000f;
   font-weight: bold;
+  z-index: 10;
   font-size: 18px;
+  text-align: center;
 }

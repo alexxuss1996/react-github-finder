@@ -39,6 +39,7 @@ export default function ListContainer() {
   if (loading || searchLoading) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">{error}</div>;
   if (searchError) return <div className="error">{searchError}</div>;
+  if (currentUsers?.length === 0) return <div className="loading">Nothing to show here :)</div>;
   return (
     <ul className="list-container">
       {currentUsers ? (

@@ -5,15 +5,14 @@ import {
   incrementCurrentPage,
   decrementCurrentPage,
 } from "../../../store/features/pagination/paginationSlice";
+import { calculatePaginationPages } from "../../../functions";
 import "./Paginator.scss";
 
 export default function Paginator() {
   const { currentPage, numberOfPages } = useSelector((state) => state.pagination);
   const dispatch = useDispatch();
 
-  const calculatePages = (pages) => new Array(Math.ceil(pages)).fill(0).map((_, index) => index + 1);
-
-  const pagePositions = calculatePages(numberOfPages);
+  const pagePositions = calculatePaginationPages(numberOfPages);
 
   return (
     <div className="pagination">
@@ -35,7 +34,7 @@ export default function Paginator() {
       </ul>
       <button
         className="pagination-next"
-        disabled={currentPage === pagePositions?.length}
+        disabled={currentPage === pagePositions?.length || pagePositions?.length === 0}
         onClick={() => {
           dispatch(incrementCurrentPage());
         }}
