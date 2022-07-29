@@ -1,6 +1,7 @@
 .logo {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
   font: 1.8em sans-serif;
   word-break: normal;
-  width: 18.5%;
+  width: 23%;
 }

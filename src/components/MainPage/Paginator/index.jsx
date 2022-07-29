@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   setCurrentPage,
   incrementCurrentPage,
@@ -8,8 +8,7 @@ import {
 import { calculatePaginationPages } from "../../../functions";
 import "./Paginator.scss";
 
-export default function Paginator() {
-  const { currentPage, numberOfPages } = useSelector((state) => state.pagination);
+export default function Paginator({ currentPage, numberOfPages }) {
   const dispatch = useDispatch();
 
   const pagePositions = calculatePaginationPages(numberOfPages);
