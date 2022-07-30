@@ -33,7 +33,16 @@ export const githubApiService = createApi({
         },
       }),
     }),
+    getUserProfile: builder.query({
+      query: (username) => ({
+        url: `/users/${username}`,
+        params: {
+          client_id: githubClientId,
+          client_secret: githubClientSecret,
+        },
+      }),
+    }),
   }),
 });
 
-export const { useGetInitUsersQuery, useGetSearchedUsersQuery } = githubApiService;
+export const { useGetInitUsersQuery, useGetSearchedUsersQuery, useGetUserProfileQuery } = githubApiService;
