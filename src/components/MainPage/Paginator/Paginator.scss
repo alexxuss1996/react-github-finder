@@ -1,13 +1,14 @@
 .pagination {
   display: flex;
   justify-content: center;
+  flex: 1 1 auto;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 500;
   min-width: 320px;
   margin: 15px auto;
   height: 36px;
-  align-items: center;
+  align-items: flex-end;
   .pagination-numbers {
     margin: 6px;
     display: flex;
@@ -43,6 +44,7 @@
     border: none;
     background-color: transparent;
     color: #fff;
+    margin-bottom: 20px;
     text-decoration: underline;
     &:hover {
       text-decoration: none;

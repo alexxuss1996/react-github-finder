@@ -1,16 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./UsersListItem.scss";
 
-export default function UsersListItem({ name, userUrl, avatarUrl }) {
+export default function UsersListItem({ name, userURL, avatarURL }) {
   return (
     <li className="users-list-item">
-      <a className="users-list-item-name" href={userUrl}>
+      <a className="users-list-item-name" href={userURL}>
         {name}
       </a>
-      <img src={avatarUrl} className="user-avatar" alt={name} />
-      <button type="button" className="btn btn-primary">
+      <img src={avatarURL} className="user-avatar" alt={name} />
+      <Link to="/" className="btn btn-primary">
         View Profile
-      </button>
+      </Link>
     </li>
   );
 }

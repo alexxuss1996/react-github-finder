@@ -4,6 +4,7 @@ import UsersListItem from "./UsersListItem";
 import "./ListContainer.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { setNumberOfPages, resetNumberOfPages } from "../../../store/features/pagination/paginationSlice";
+import { splitPages } from "../../../functions";
 
 export default function ListContainer() {
   const dispatch = useDispatch();
@@ -17,16 +18,10 @@ export default function ListContainer() {
   } = useGetSearchedUsersQuery(searchQuery, {
     skip: !isSearching,
   });
-  let lastIndexItem = currentPage * perPage;
-  let firstIndexItem = lastIndexItem - perPage;
 
-  let currentUsers = isSearching
-    ? searchUsers?.items?.slice(firstIndexItem, lastIndexItem)
-    : initUsers?.slice(firstIndexItem, lastIndexItem);
+  const usersArray = isSearching ? searchUsers?.items : initUsers;
 
-  let pagesCount = isSearching
-    ? Math.ceil(searchUsers?.items?.length / perPage)
-    : Math.ceil(initUsers?.length / perPage);
+  const { pageSlice: currentUsers, pagesCount } = splitPages(usersArray, currentPage, perPage);
 
   useEffect(() => {
     if (!Number.isNaN(pagesCount)) {
@@ -44,7 +39,7 @@ export default function ListContainer() {
     <ul className="list-container">
       {currentUsers ? (
         currentUsers.map((user) => (
-          <UsersListItem key={user.id} name={user.login} userUrl={user.html_url} avatarUrl={user.avatar_url} />
+          <UsersListItem key={user.id} name={user.login} userURL={user.html_url} avatarURL={user.avatar_url} />
         ))
       ) : (
         <div className="loading">Loading</div>
