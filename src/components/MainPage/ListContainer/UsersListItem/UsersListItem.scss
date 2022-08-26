@@ -8,6 +8,7 @@
   padding: 10px 20px;
   box-shadow: 1px 1px 1px rgba(#0054c7, 0.15);
   background-color: #000;
+  min-height: 100px;
   &-name {
     font-size: 16px;
     cursor: pointer;
@@ -23,6 +24,9 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    display: block;
+    align-self: center;
+    margin-bottom: 0;
     overflow: hidden;
     order: -1;
   }

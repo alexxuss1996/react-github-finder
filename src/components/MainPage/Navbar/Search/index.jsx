@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { resetCurrentPage } from "../../../store/features/pagination/paginationSlice";
-import { resetSearchQuery, setIsSearching, setSearchQuery } from "../../../store/features/search/searchSlice";
+import { resetCurrentPage } from "../../../../store/features/pagination/paginationSlice";
+import { resetSearchQuery, setIsSearching, setSearchQuery } from "../../../../store/features/search/searchSlice";
 import "./Search.scss";
 export default function Search() {
   const searchInputRef = useRef(null, "input");

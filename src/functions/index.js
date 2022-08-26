@@ -10,3 +10,8 @@ export const splitPages = (dataArr, currentPage, perPage) => {
     pagesCount,
   };
 };
+
+export const startUrlWithHttps = (url) => {
+  const fullUrlRegexp = /^https?:\/\//;
+  return fullUrlRegexp.test(url) ? url : `https://${url}`;
+};

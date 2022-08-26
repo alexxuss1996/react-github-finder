@@ -1,0 +1,19 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 1.8rem sans-serif;
+  word-break: normal;
+  width: 23%;
+  .gh-icon {
+    margin-right: 6px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .logo {
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 15px;
+  }
+}

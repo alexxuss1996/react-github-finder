@@ -25,6 +25,7 @@ body {
   line-height: 1.6;
   background-color: #212121;
   color: #fefefe;
+  overflow-x: hidden;
 }
 
 .main-container,
@@ -62,7 +63,7 @@ img {
 .flex-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
 }
 .flex-container--column {
   display: flex;
@@ -101,6 +102,15 @@ input[type="text"] {
   }
 }
 
+.btn-back {
+  line-height: 1;
+  position: relative;
+  .back-icon {
+    position: relative;
+    top: 2px;
+  }
+}
+
 .btn-secondary {
   background-color: #39be1a;
   color: #fff;
@@ -112,7 +122,6 @@ input[type="text"] {
 }
 
 .btn-red {
-  margin-left: 6px;
   color: #fff;
   background-color: #cb2a2a;
   &:hover {

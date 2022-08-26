@@ -5,6 +5,7 @@ import "./ListContainer.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { setNumberOfPages, resetNumberOfPages } from "../../../store/features/pagination/paginationSlice";
 import { splitPages } from "../../../functions";
+import Spinner from "../../Spinner";
 
 export default function ListContainer() {
   const dispatch = useDispatch();
@@ -39,10 +40,10 @@ export default function ListContainer() {
     <ul className="list-container">
       {currentUsers ? (
         currentUsers.map((user) => (
-          <UsersListItem key={user.id} name={user.login} userURL={user.html_url} avatarURL={user.avatar_url} />
+          <UsersListItem key={user?.id} login={user?.login} userURL={user?.html_url} avatarURL={user?.avatar_url} />
         ))
       ) : (
-        <div className="loading">Loading</div>
+        <Spinner />
       )}
     </ul>
   );

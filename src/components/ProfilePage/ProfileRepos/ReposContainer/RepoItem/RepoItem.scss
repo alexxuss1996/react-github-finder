@@ -1,0 +1,64 @@
+.repo-item {
+  background-color: #000;
+  border-radius: 4px;
+  min-height: 120px;
+  padding: 12px 18px;
+  color: #ccc;
+  font-size: 14px;
+  position: relative;
+}
+
+.item-top-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item-bottom-line {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.repo-link {
+  color: #58a6ff;
+  font-weight: 600;
+  &:hover {
+    text-decoration: underline;
+    color: #5096e7;
+  }
+}
+
+.repo-created {
+  color: #fff;
+}
+
+.repo-description {
+  color: #8b8b8b;
+  margin-top: 6px;
+  line-height: 1.4;
+  min-height: 60px;
+}
+
+.repo-language {
+  display: flex;
+  align-items: center;
+}
+
+.repo-language,
+.repo-stars,
+.repo-forks,
+.repo-watchers {
+  margin-right: 10px;
+}
+
+.language-color {
+  width: 12px;
+  position: relative;
+  bottom: 2px;
+  height: 12px;
+  margin-right: 5px;
+  display: inline-block;
+  border: 1px solid rgba(221, 221, 221, 0.25);
+  border-radius: 50%;
+}

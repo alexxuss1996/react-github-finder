@@ -56,3 +56,23 @@
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  .pagination {
+    font-size: 14px;
+    .pagination-numbers {
+      margin: 2px;
+    }
+    .pagination-button {
+      height: 28px;
+      width: 28px;
+      margin: 3px;
+    }
+
+    .pagination-prev,
+    .pagination-next {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+  }
+}

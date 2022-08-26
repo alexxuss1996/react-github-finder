@@ -1,0 +1,10 @@
+.profile-repos {
+  width: 66.6667%;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .profile-repos {
+    width: 100%;
+  }
+}

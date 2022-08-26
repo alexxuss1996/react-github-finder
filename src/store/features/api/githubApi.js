@@ -42,7 +42,19 @@ export const githubApiService = createApi({
         },
       }),
     }),
+    getUserRepos: builder.query({
+      query: (username) => ({
+        url: `/users/${username}/repos`,
+        params: {
+          client_id: githubClientId,
+          client_secret: githubClientSecret,
+        },
+      }),
+      transformResponse: (response) =>
+        response.filter((repo) => !repo.fork).sort((a, b) => b.stargazers_count - a.stargazers_count),
+    }),
   }),
 });
 
-export const { useGetInitUsersQuery, useGetSearchedUsersQuery, useGetUserProfileQuery } = githubApiService;
+export const { useGetInitUsersQuery, useGetSearchedUsersQuery, useGetUserProfileQuery, useGetUserReposQuery } =
+  githubApiService;
